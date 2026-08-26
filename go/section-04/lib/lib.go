@@ -1,4 +1,3 @@
 package lib
 
-func main() {
-}
+var lib_GLOBAL_SCOPE int = 10

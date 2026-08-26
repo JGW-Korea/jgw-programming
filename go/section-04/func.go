@@ -33,6 +33,5 @@ func main() {
 		fmt.Println("map func value:", function(10, 20))
 	}
 
-
 	callee()
 }
