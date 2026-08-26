@@ -17,5 +17,7 @@ func funcA() func(int, int)int {
 func main() {
 	add := funcA()
 
+	add2 := sum
+
 	fmt.Println("sum:", add(10, 20))
 }
