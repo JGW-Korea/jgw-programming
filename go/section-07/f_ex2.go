@@ -14,10 +14,22 @@ func funcA() func(int, int)int {
 	}
 }
 
+func funcC(x *int) {
+	*x = 20
+	fmt.Printf("%p, %d\n", &x, *x)
+}
+
 func main() {
 	add := funcA()
 
-	add2 := sum
+	var str string = "string";
+
+	fmt.Println(len(str))
+
+	x := 10
+	fmt.Printf("%p, %d\n", &x, x)
+	funcC(&x)
+	fmt.Printf("%p, %d\n", &x, x)
 
 	fmt.Println("sum:", add(10, 20))
 }
