@@ -26,6 +26,12 @@ type User struct {
 	Age   int     `validate:"gte=0,lte=130"`
 }
 
+type Resume struct {
+	Name   string  `json:"name"  bson:"name"`
+	Email  string  `json:"email" bson:"email"`
+	Age    int     `json:"age"   bson:"age"`
+}
+
 func main() {
 	// 구조체 #1. 기본 사용법
 	tag := reflect.TypeOf(Car{})
@@ -69,5 +75,17 @@ func main() {
 				err.Tag(),
 			)
 		}
+	}
+
+	// 구조체 태그 #4. 여러 구조체 태그 지정
+	tag2 := reflect.TypeOf(Resume{})
+	
+	for i := 0; i < tag2.NumField(); i++ {
+		fmt.Printf(
+			"Multiple Tag: %s `json=\"%s\"` `bson=\"%s\"`\n",
+			tag2.Field(i).Tag,
+			tag2.Field(i).Tag.Get("json"),
+			tag2.Field(i).Tag.Get("bson"),
+		)
 	}
 }
