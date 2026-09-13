@@ -55,7 +55,7 @@ func trueAtomic() {
 	wg.Wait()                             
 	finalCnt := atomic.LoadInt64(&cnt)
 
-	fmt.Println("[True Atomic] Watit Group End Cnt? \t >>>>", cnt)             // 대기가 풀린 이후 실행된다.
+	fmt.Println("[True Atomic] Watit Group End Cnt? \t >>>>", cnt)          // 대기가 풀린 이후 실행된다.
 	fmt.Println("[True Atomic] Watit Group End Final Cnt? >>>>", finalCnt)  // 대기가 풀린 이후 실행된다. (추천)
 }
 
