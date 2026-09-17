@@ -12,7 +12,7 @@ func main() {
 	// 문법적인 에러는 아니지만, 논리적인 코드 흐름에 따른 에러 발생 처리 가능
 
 	fmt.Println("Start Main")
-	panic("Error occurred : user stopped!")      // 패닉 사용 방법 #1. panic()
+	panic("Error occurred : user stopped!")         // 패닉 사용 방법 #1. panic()
 	// log.Panic("Error occurred : user stopped!")  // 패닉 사용 방법 #2. log.Panic()
 	fmt.Println("실행 불가");
 }

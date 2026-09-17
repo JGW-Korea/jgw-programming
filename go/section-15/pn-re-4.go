@@ -7,12 +7,14 @@ import (
 	"os"
 )
 
+func readFileRecover() {
+	if r := recover(); r != nil {
+		fmt.Println("File Open Error:", r)
+	}
+}
+
 func fileOpen(fileName string) {
-	defer func() {
-		if r := recover(); r != nil {
-			fmt.Println("File Open Error :", r)
-		}
-	}()
+	defer readFileRecover()
 
 	file, err := os.Open(fileName)
 
