@@ -1,8 +1,8 @@
 {
     "compilerOptions": {
-        // "types": ["node"],
+        "types": ["node"],
         "typeRoots": null,
-        "module": null,
+        "module": "nodenext",
         "moduleResolution": "nodenext"
     }
 }
