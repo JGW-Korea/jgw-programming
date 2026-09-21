@@ -12,7 +12,7 @@ func runFunc() {
 		fmt.Println("Error Message : ", s)
 	}()
 
-	a := [3]int{1, 2, 3}
+	var a [3]int = [3]int{1000, 2000, 3000}
 
 	for i := 0; i < 5; i++ {
 		fmt.Println("ex1 : ", a[i])
