@@ -26,7 +26,7 @@ func main() {
 		fmt.Println(r)
 	}()
 	
-	log.Panic("sddddd")
+	log.Panicf("sddddd")
 
 	step1()
 

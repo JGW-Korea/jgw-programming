@@ -14,7 +14,12 @@ type PowError struct {
 }
 
 func (e PowError) Error() string {
-	return fmt.Sprintf("[%v] Error - Input Value(value: %g) - %s", e.time, e.value, e.message)
+	return fmt.Sprintf(
+		"[%v] Error - Input Value(value: %g) - %s",
+		e.time,
+		e.value,
+		e.message,
+	)
 }
 
 func Power(f, i float64) (float64, error) {
