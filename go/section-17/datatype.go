@@ -67,6 +67,14 @@ func main() {
 	fmt.Printf("value=%s, len=%d\n", str4, len(str4))
 
 	// complex
-	var c1 complex64 = 1 + 2i
+	var c1 complex64  = 1 + 2i
 	var c2 complex128 = complex(3, 4)
+
+	fmt.Println(c1)       // (3+4i)
+	fmt.Println(real(c1)) // 3
+	fmt.Println(imag(c1)) // 4
+	
+	fmt.Println(c2)       // (3+4i)
+	fmt.Println(real(c2)) // 3
+	fmt.Println(imag(c2)) // 4
 }
