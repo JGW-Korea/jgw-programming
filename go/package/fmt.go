@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func Printing() (n int) {
 	const (
@@ -37,12 +40,28 @@ func Printing() (n int) {
 	fmt.Println(str1)
 
 	// Printing #5. fmt.Sprintf()
-	str2 := fmt.Sprintf("%s is %d years old.\n", name, age)
+	str2 := fmt.Sprintf("%s is %d years old.", name, age)
 	fmt.Println(str2)
 
 	// Printing #6. fmt.Sprintln()
 	str3 := fmt.Sprintln("10 + 20", "= 30")
 	fmt.Print(str3)
+
+	// Printting #7. fmt.Fprint()
+	file1, err1 := os.Create("output.txt")
+	if err1 != nil {
+		fmt.Println(err1)
+	}
+	defer file1.Close()
+	
+	fmt.Fprint(file1, "Hello World!")
+
+	// Printing #8. fmt.Fprintf()
+	file2, err2 := os.Create("output2.txt")
+	if err2 != nil {
+		fmt.Println(err2)
+	}
+	fmt.Fprintf(file2, "Hello World!!")
 
 	return 0
 }
