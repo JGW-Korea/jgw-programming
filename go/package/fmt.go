@@ -32,6 +32,18 @@ func Printing() (n int) {
 	}
 	fmt.Println(n3)
 
+	// Printing #4. fmt.Sprint()
+	str1 := fmt.Sprint(1, 2, 3, 4, 5)
+	fmt.Println(str1)
+
+	// Printing #5. fmt.Sprintf()
+	str2 := fmt.Sprintf("%s is %d years old.\n", name, age)
+	fmt.Println(str2)
+
+	// Printing #6. fmt.Sprintln()
+	str3 := fmt.Sprintln("10 + 20", "= 30")
+	fmt.Print(str3)
+
 	return 0
 }
 
