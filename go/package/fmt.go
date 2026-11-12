@@ -63,6 +63,28 @@ func Printing() (n int) {
 	}
 	fmt.Fprintf(file2, "Hello World!!")
 
+	// Printing #9. fmt.Append()
+	buf1 := make([]byte, 0, 128)
+	
+	nametemp := fmt.Sprint("Name: ", "Kim", "\n")
+	agetemp := fmt.Sprint("Age: ", 25, "\n")
+	activetemp := fmt.Sprint("Active: ", true, "\n")
+	
+	buf1 = append(buf1, []byte(nametemp)...)
+	buf1 = append(buf1, []byte(agetemp)...)
+	buf1 = append(buf1, []byte(activetemp)...)
+
+	os.WriteFile("user1.txt", buf1, 0644)
+
+	buf2 := make([]byte, 0, 128)
+	
+	buf2 = fmt.Append(buf2, "Name: ", "Kim", "\n")
+	buf2 = fmt.Append(buf2, "Age: ", 25, "\n")
+	buf2 = fmt.Append(buf2, "Active: ", true, "\n")
+	
+	os.WriteFile("user2.txt", buf2, 0644)
+
+
 	return 0
 }
 
