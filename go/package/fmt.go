@@ -94,6 +94,14 @@ func Printing() (n int) {
 
 	os.WriteFile("user3.txt", buf3, 0644)
 
+	// Printing #11. fmt.Appendln()
+	buf4 := make([]byte, 0, 128)
+
+	buf4 = fmt.Appendln(buf4, "Name:", "Kim")
+	buf4 = fmt.Appendln(buf4, "Age:", 25)
+	buf4 = fmt.Appendln(buf4, "Active:", true)
+
+	os.WriteFile("user4.txt", buf4, 0644)
 
 	return 0
 }
