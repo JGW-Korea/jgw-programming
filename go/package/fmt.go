@@ -116,6 +116,19 @@ func Printing() (n int) {
 	return 0
 }
 
+func Scanning() {
+	var name string
+	var age  int
+	
+	// Scanning #1. fmt.Scan()
+	cnt1, err1 := fmt.Scan(&name, &age)
+	if err1 != nil {
+		fmt.Println(err1)
+	}
+	fmt.Printf("성공 개수: %d, name=%s, age=%d\n", cnt1, name, age)
+}
+
 func main() {
-	Printing()
+	// Printing()
+	Scanning()
 }
