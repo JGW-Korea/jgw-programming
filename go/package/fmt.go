@@ -164,13 +164,22 @@ func Scanning() {
 	fmt.Printf("성공 개수: %d, name=%s, age=%d\n", cnt6, name, age)
 
 	// Scanning #7. fmt.Fscan()
-	reader := strings.NewReader("Kim 25")
+	reader1 := strings.NewReader("Kim 25")
 
-	cnt7, err7 := fmt.Fscan(reader, &name, &age)
+	cnt7, err7 := fmt.Fscan(reader1, &name, &age)
 	if err7 != nil {
 		fmt.Println(err7)
 	}
 	fmt.Printf("성공 개수: %d, name=%s, age=%d\n", cnt7, name, age)
+
+	// Scanning #8. fmt.Fscanf()
+	reader2 := strings.NewReader("Kim 25")
+
+	cnt8, err8 := fmt.Fscanf(reader2, "%s %d", &name, &age)
+	if err8 != nil {
+		fmt.Println(err8)
+	}
+	fmt.Printf("성공 개수: %d, name=%s, age=%d\n", cnt8, name, age)
 }
 
 func main() {
