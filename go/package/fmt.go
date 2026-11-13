@@ -203,17 +203,35 @@ func FmtError(num int) (string, error) {
 }
 
 func main() {
-	// Printing()
-	// Scanning()
-	result1, err1 := FmtError(10)
-	if err1 != nil {
-		fmt.Println(err1)
-	}
-	fmt.Println(result1)
+	var execute string
+	
+	fmt.Printf("실행할 패키지(p: Printing, s: Scanning, e: FmtError): ")
+	fmt.Scanf("%s", &execute)
 
-	result2, err2 := FmtError(0)
-	if err2 != nil {
-		fmt.Println(err2)
+	switch execute {
+		case "p": {
+			Printing()
+		}
+		case "s": {
+			Scanning()
+		}
+		case "e": {
+			result1, err1 := FmtError(10)
+			if err1 != nil {
+				fmt.Println(err1)
+			}
+			fmt.Println(result1)
+
+			result2, err2 := FmtError(0)
+			if err2 != nil {
+				fmt.Println(err2)
+			}
+			fmt.Println(result2)
+		}
+		default: {
+			panic("p, s, e만 입력할 수 있습니다...")
+		}
 	}
-	fmt.Println(result2)
+	
+
 }
