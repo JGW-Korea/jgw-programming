@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strings"
 )
 
 type Number int
@@ -161,6 +162,15 @@ func Scanning() {
 		fmt.Println(err6)
 	}
 	fmt.Printf("성공 개수: %d, name=%s, age=%d\n", cnt6, name, age)
+
+	// Scanning #7. fmt.Fscan()
+	reader := strings.NewReader("Kim 25")
+
+	cnt7, err7 := fmt.Fscan(reader, &name, &age)
+	if err7 != nil {
+		fmt.Println(err7)
+	}
+	fmt.Printf("성공 개수: %d, name=%s, age=%d\n", cnt7, name, age)
 }
 
 func main() {
