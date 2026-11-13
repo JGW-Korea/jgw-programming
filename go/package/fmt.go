@@ -191,7 +191,29 @@ func Scanning() {
 	fmt.Printf("성공 개수: %d, name=%s, age=%d\n", cnt9, name, age)
 }
 
+func FmtError(num int) (string, error) {
+	var s string
+
+	if num != 0 {
+		s = fmt.Sprintf("Hello Golang: %d", num)
+		return s, nil
+	}
+
+	return "", fmt.Errorf("%d를 입력했습니다. 오류 발생!", num)
+}
+
 func main() {
 	// Printing()
-	Scanning()
+	// Scanning()
+	result1, err1 := FmtError(10)
+	if err1 != nil {
+		fmt.Println(err1)
+	}
+	fmt.Println(result1)
+
+	result2, err2 := FmtError(0)
+	if err2 != nil {
+		fmt.Println(err2)
+	}
+	fmt.Println(result2)
 }
