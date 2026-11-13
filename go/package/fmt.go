@@ -5,6 +5,13 @@ import (
 	"os"
 )
 
+type Number int
+
+func (n Number) Format(state fmt.State, verb rune) {
+	format := fmt.FormatString(state, verb)
+	fmt.Fprint(state, format)
+}
+
 func Printing() (n int) {
 	const (
 		name string = "Kim"
@@ -102,6 +109,9 @@ func Printing() (n int) {
 	buf4 = fmt.Appendln(buf4, "Active:", true)
 
 	os.WriteFile("user4.txt", buf4, 0644)
+
+	// Printing #12. fmt.FormatString()
+	fmt.Printf("value: %+d\n", Number(10))
 
 	return 0
 }
