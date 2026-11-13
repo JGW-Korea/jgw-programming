@@ -180,6 +180,15 @@ func Scanning() {
 		fmt.Println(err8)
 	}
 	fmt.Printf("성공 개수: %d, name=%s, age=%d\n", cnt8, name, age)
+
+	// Scanning #9. fmt.Fscanln()
+	reader3 := strings.NewReader("Kim 25")
+
+	cnt9, err9 := fmt.Fscanln(reader3, &name, &age)
+	if err9 != nil {
+		fmt.Println(err9)
+	}
+	fmt.Printf("성공 개수: %d, name=%s, age=%d\n", cnt9, name, age)
 }
 
 func main() {
