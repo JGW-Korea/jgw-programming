@@ -135,11 +135,18 @@ func Scanning() {
 	fmt.Printf("성공 개수: %d, name=%s, age=%d\n", cnt2, name, age)
 
 	// Scanning #3. fmt.Scanln()
-	cnt, err := fmt.Scanln(&name, &age)
-	if err != nil {
-		fmt.Println(err)
+	cnt3, err3 := fmt.Scanln(&name, &age)
+	if err3 != nil {
+		fmt.Println(err3)
 	}
-	fmt.Println(cnt)
+	fmt.Printf("성공 개수: %d, name=%s, age=%d\n", cnt3, name, age)
+
+	// Scanning #4. fmt.Sscan()
+	cnt4, err4 := fmt.Sscan("Kim\t32", &name, &age)
+	if err4 != nil {
+		fmt.Println(err4)
+	}
+	fmt.Printf("성공 개수: %d, name=%s, age=%d\n", cnt4, name, age)
 }
 
 func main() {
