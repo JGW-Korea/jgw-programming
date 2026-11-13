@@ -147,6 +147,13 @@ func Scanning() {
 		fmt.Println(err4)
 	}
 	fmt.Printf("성공 개수: %d, name=%s, age=%d\n", cnt4, name, age)
+
+	// Scanning #5. fmt.Sscanf()
+	cnt5, err5 := fmt.Sscanf("Kim 43", "%s %d", &name, &age)
+	if err5 != nil {
+		fmt.Println(err5)
+	}
+	fmt.Printf("성공 개수: %d, name=%s, age=%d\n", cnt5, name, age)
 }
 
 func main() {
