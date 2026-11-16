@@ -205,7 +205,7 @@ func FmtError(num int) (string, error) {
 func main() {
 	var execute string
 	
-	fmt.Printf("실행할 패키지(p: Printing, s: Scanning, e: FmtError): ")
+	fmt.Printf("실행할 패키지(p: Printing, s: Scanning, e: FmtError, t: Type): ")
 	fmt.Scanf("%s", &execute)
 
 	switch execute {
@@ -228,10 +228,45 @@ func main() {
 			}
 			fmt.Println(result2)
 		}
+		case "t": {
+			useFormatterType()
+		}
 		default: {
-			panic("p, s, e만 입력할 수 있습니다...")
+			panic("p, s, e, t만 입력할 수 있습니다...")
 		}
 	}
-	
+}
 
+// -------------------------------
+// fmt 패키지에서 제공하는 Type 관련 로직
+// -------------------------------
+
+type Person struct {
+	Name string
+	Age  int
+}
+
+func (p Person) Format(f fmt.State, verb rune) {
+	switch verb {
+		case 'v': {
+			fmt.Fprintf(f, "이름: %s, 나이: %d", p.Name, p.Age)
+		}
+		case 's': {
+			fmt.Fprint(f, p.Name)
+		}
+		case 'd': {
+			fmt.Fprint(f, p.Age)
+		}
+	}
+}
+
+func useFormatterType() {
+	person := Person{
+		Name: "Kim",
+		Age: 25,
+	}
+
+	fmt.Printf("%v\n", person)
+	fmt.Printf("%s\n", person)
+	fmt.Printf("%d\n", person)
 }
