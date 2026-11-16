@@ -230,6 +230,7 @@ func main() {
 		}
 		case "t": {
 			useFormatterType()
+			useGoStringerType()
 		}
 		default: {
 			panic("p, s, e, t만 입력할 수 있습니다...")
@@ -269,4 +270,17 @@ func useFormatterType() {
 	fmt.Printf("%v\n", person)
 	fmt.Printf("%s\n", person)
 	fmt.Printf("%d\n", person)
+}
+
+func (p Person) GoString() string {
+	return fmt.Sprintf("이름: %s, 나이: %d", p.Name, p.Age)
+}
+
+func useGoStringerType() {
+	person := Person{
+		Name: "Kim",
+		Age: 25,
+	}
+
+	fmt.Printf("%#v\n", person)
 }
